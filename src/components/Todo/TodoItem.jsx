@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
+import { format, isToday, isTomorrow, isYesterday, isPast } from 'date-fns';
 import useTodoStore from '../../stores/todoStore';
 import audioService from '../../services/audioService';
 import SubItem from './SubItem';
 import NotesEditor from './NotesEditor';
 import PrioritySelector from '../Controls/PrioritySelector';
+import DatePicker from '../Controls/DatePicker';
 import styles from './TodoItem.module.css';
 
 const PRIORITY_COLORS = {
@@ -14,6 +16,15 @@ const PRIORITY_COLORS = {
   4: 'var(--priority-4)',
   5: 'var(--priority-5)',
 };
+
+function formatDateLabel(dateStr) {
+  if (!dateStr) return '';
+  const date = new Date(dateStr);
+  if (isToday(date)) return 'Today';
+  if (isTomorrow(date)) return 'Tomorrow';
+  if (isYesterday(date)) return 'Yesterday';
+  return format(date, 'MMM d');
+}
 
 export default function TodoItem({ todo, isSelected }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -84,6 +95,10 @@ export default function TodoItem({ todo, isSelected }) {
     updateTodo(todo.id, { priority: newPriority });
   };
 
+  const handleDateChange = (newDate) => {
+    updateTodo(todo.id, { date: newDate });
+  };
+
   const handleDelete = () => {
     deleteTodo(todo.id);
     setShowMenu(false);
@@ -91,6 +106,9 @@ export default function TodoItem({ todo, isSelected }) {
 
   const completedSubItems = todo.subItems?.filter(s => s.completed).length || 0;
   const totalSubItems = todo.subItems?.length || 0;
+
+  const dateLabel = formatDateLabel(todo.date);
+  const isOverdue = todo.date && isPast(new Date(todo.date)) && !isToday(new Date(todo.date)) && !todo.completed;
 
   return (
     <div
@@ -129,13 +147,21 @@ export default function TodoItem({ todo, isSelected }) {
             <span className={styles.title}>{todo.title}</span>
           )}
 
-          {totalSubItems > 0 && (
-            <div className={styles.meta}>
+          <div className={styles.meta}>
+            {dateLabel && (
+              <span className={`${styles.date} ${isOverdue ? styles.overdue : ''}`}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+                  <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                </svg>
+                {dateLabel}
+              </span>
+            )}
+            {totalSubItems > 0 && (
               <span className={styles.subCount}>
                 {completedSubItems}/{totalSubItems}
               </span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         <button
@@ -159,6 +185,14 @@ export default function TodoItem({ todo, isSelected }) {
       {/* Dropdown Menu */}
       {showMenu && (
         <div className={styles.menu} ref={menuRef}>
+          <div className={styles.menuSection}>
+            <label className={styles.menuLabel}>Date</label>
+            <DatePicker
+              value={todo.date}
+              onChange={handleDateChange}
+            />
+          </div>
+
           <div className={styles.menuSection}>
             <label className={styles.menuLabel}>Priority</label>
             <PrioritySelector

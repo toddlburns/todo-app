@@ -8,11 +8,19 @@ export default function TodoList() {
   const { todos, selectedItems } = useTodoStore();
 
   const sortedTodos = useMemo(() => {
-    // Sort by: incomplete first, then by priority (high to low)
+    // Sort by: incomplete first, then by date (earliest first), then by priority (high to low)
     return [...todos].sort((a, b) => {
+      // Completed items at the bottom
       if (a.completed !== b.completed) {
         return a.completed ? 1 : -1;
       }
+      // Sort by date (earliest first, items without dates at the end)
+      if (a.date !== b.date) {
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return a.date.localeCompare(b.date);
+      }
+      // Then by priority (high to low)
       return b.priority - a.priority;
     });
   }, [todos]);

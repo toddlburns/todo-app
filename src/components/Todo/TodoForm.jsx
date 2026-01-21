@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
+import { format } from 'date-fns';
 import useTodoStore from '../../stores/todoStore';
 import { findSimilarItems } from '../../utils/similarity';
 import VoiceInput from '../Controls/VoiceInput';
 import PrioritySelector from '../Controls/PrioritySelector';
+import DatePicker from '../Controls/DatePicker';
 import styles from './TodoForm.module.css';
 
 export default function TodoForm() {
   const [title, setTitle] = useState('');
   const [priority, setPriority] = useState(0);
-  const [showPriority, setShowPriority] = useState(false);
+  const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
+  const [showOptions, setShowOptions] = useState(false);
   const [similarItems, setSimilarItems] = useState([]);
   const [showSimilar, setShowSimilar] = useState(false);
   const inputRef = useRef(null);
@@ -34,11 +37,14 @@ export default function TodoForm() {
     addTodo({
       title: title.trim(),
       priority,
+      date,
     });
 
     setTitle('');
     setPriority(0);
+    setDate(format(new Date(), 'yyyy-MM-dd'));
     setShowSimilar(false);
+    setShowOptions(false);
     inputRef.current?.focus();
   };
 
@@ -51,6 +57,7 @@ export default function TodoForm() {
     setTitle('');
     setPriority(0);
     setShowSimilar(false);
+    setShowOptions(false);
     inputRef.current?.focus();
   };
 
@@ -75,12 +82,12 @@ export default function TodoForm() {
           <div className={styles.actions}>
             <button
               type="button"
-              className={`${styles.priorityBtn} ${showPriority ? styles.active : ''}`}
-              onClick={() => setShowPriority(!showPriority)}
-              title="Set priority"
+              className={`${styles.optionsBtn} ${showOptions ? styles.active : ''}`}
+              onClick={() => setShowOptions(!showOptions)}
+              title="Set date and priority"
             >
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/>
+                <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/>
               </svg>
             </button>
 
@@ -96,9 +103,16 @@ export default function TodoForm() {
           </div>
         </div>
 
-        {showPriority && (
-          <div className={styles.priorityRow}>
-            <PrioritySelector value={priority} onChange={setPriority} />
+        {showOptions && (
+          <div className={styles.optionsRow}>
+            <div className={styles.optionGroup}>
+              <label className={styles.optionLabel}>Date</label>
+              <DatePicker value={date} onChange={setDate} />
+            </div>
+            <div className={styles.optionGroup}>
+              <label className={styles.optionLabel}>Priority</label>
+              <PrioritySelector value={priority} onChange={setPriority} />
+            </div>
           </div>
         )}
       </form>

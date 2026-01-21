@@ -82,10 +82,19 @@
   color: var(--text-secondary);
 }
 
-.recurrence {
+.date {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.date svg {
+  width: 12px;
+  height: 12px;
+}
+
+.overdue {
+  color: #d32f2f;
 }
 
 .subCount {

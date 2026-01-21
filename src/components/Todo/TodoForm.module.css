@@ -36,8 +36,7 @@
   gap: 4px;
 }
 
-.priorityBtn,
-.voiceBtn {
+.optionsBtn {
   width: 36px;
   height: 36px;
   border-radius: 6px;
@@ -48,19 +47,17 @@
   transition: all 0.15s;
 }
 
-.priorityBtn:hover,
-.voiceBtn:hover {
+.optionsBtn:hover {
   background: var(--bg-hover);
   color: var(--text-primary);
 }
 
-.priorityBtn.active {
+.optionsBtn.active {
   background: var(--accent-color);
   color: white;
 }
 
-.priorityBtn svg,
-.voiceBtn svg {
+.optionsBtn svg {
   width: 20px;
   height: 20px;
 }
@@ -82,10 +79,27 @@
   background: #c9392c;
 }
 
-.priorityRow {
+.optionsRow {
   padding-top: 12px;
   margin-top: 12px;
   border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.optionLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Similar Items */
