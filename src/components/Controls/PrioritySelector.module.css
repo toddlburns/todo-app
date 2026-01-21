@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 6px;
+}
+
+.option {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  transition: all 0.15s;
+  border: 2px solid transparent;
+}
+
+.option:hover {
+  background: var(--priority-color);
+  color: white;
+}
+
+.option.selected {
+  background: var(--priority-color);
+  color: white;
+  border-color: var(--text-primary);
+}

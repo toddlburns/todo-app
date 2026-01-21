@@ -1,0 +1,55 @@
+.empty {
+  aspect-ratio: 1;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.cell:hover {
+  background: var(--bg-hover);
+}
+
+.cell.today {
+  border: 2px solid var(--accent-color);
+}
+
+.cell.selected {
+  background: var(--accent-color);
+  color: white;
+}
+
+.cell.selected.today {
+  border-color: white;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.count {
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected .count {
+  background: white;
+  color: var(--accent-color);
+}

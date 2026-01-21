@@ -1,0 +1,80 @@
+.subItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.subItem:last-child {
+  border-bottom: none;
+}
+
+.subItem.completed .title {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--priority-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--priority-color);
+  transition: all 0.15s ease;
+}
+
+.checkbox:hover {
+  background: var(--priority-color);
+  color: white;
+}
+
+.checkbox svg {
+  width: 12px;
+  height: 12px;
+}
+
+.completed .checkbox {
+  background: var(--priority-color);
+  color: white;
+}
+
+.title {
+  flex: 1;
+  font-size: 14px;
+  cursor: default;
+}
+
+.editInput {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.deleteBtn {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.subItem:hover .deleteBtn {
+  opacity: 1;
+}
+
+.deleteBtn:hover {
+  color: #d32f2f;
+}
+
+.deleteBtn svg {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,152 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.headerCenter {
+  flex: 2;
+  text-align: center;
+}
+
+.dateTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.headerRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.iconBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.iconBtn.active {
+  background: var(--accent-color);
+  color: white;
+}
+
+.iconBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.syncBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+  position: relative;
+}
+
+.syncBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.syncBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.syncDot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+}
+
+.syncError {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: #f44336;
+  border-radius: 50%;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 100px; /* Space for bulk actions bar */
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .headerCenter {
+    order: 3;
+    flex-basis: 100%;
+    margin-top: 4px;
+  }
+
+  .dateTitle {
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 12px;
+  }
+}

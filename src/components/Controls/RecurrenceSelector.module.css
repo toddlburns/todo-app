@@ -1,0 +1,128 @@
+.container {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: var(--bg-hover);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-primary);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.trigger:hover {
+  background: var(--border-color);
+}
+
+.trigger svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  padding: 12px;
+}
+
+.patterns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.patternBtn {
+  padding: 6px 12px;
+  background: var(--bg-hover);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.patternBtn:hover {
+  background: var(--border-color);
+}
+
+.patternBtn.selected {
+  background: var(--accent-color);
+  color: white;
+}
+
+.days {
+  margin-bottom: 12px;
+}
+
+.daysLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.dayButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.dayBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg-hover);
+}
+
+.dayBtn:hover {
+  background: var(--border-color);
+}
+
+.dayBtn.selected {
+  background: var(--accent-color);
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.clearBtn {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.clearBtn:hover {
+  color: #d32f2f;
+}
+
+.applyBtn {
+  padding: 8px 16px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.applyBtn:hover {
+  background: #c9392c;
+}
