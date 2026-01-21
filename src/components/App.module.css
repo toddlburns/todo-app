@@ -127,7 +127,7 @@
 .main {
   flex: 1;
   padding: 20px;
-  padding-bottom: 100px; /* Space for bulk actions bar */
+  padding-bottom: 500px; /* Space for bulk actions bar and item edit menus */
 }
 
 @media (max-width: 640px) {
@@ -148,5 +148,6 @@
 
   .main {
     padding: 12px;
+    padding-bottom: 500px;
   }
 }
