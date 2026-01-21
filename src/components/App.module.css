@@ -17,10 +17,6 @@
   z-index: 100;
 }
 
-.headerLeft {
-  flex: 1;
-}
-
 .logo {
   font-size: 20px;
   font-weight: 700;
@@ -28,22 +24,8 @@
   margin: 0;
 }
 
-.headerCenter {
-  flex: 2;
-  text-align: center;
-}
-
-.dateTitle {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  color: var(--text-primary);
-}
-
 .headerRight {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
   gap: 8px;
 }
 
@@ -131,21 +113,6 @@
 }
 
 @media (max-width: 640px) {
-  .header {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .headerCenter {
-    order: 3;
-    flex-basis: 100%;
-    margin-top: 4px;
-  }
-
-  .dateTitle {
-    font-size: 14px;
-  }
-
   .main {
     padding: 12px;
     padding-bottom: 500px;

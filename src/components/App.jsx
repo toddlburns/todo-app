@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
 import useTodoStore from '../stores/todoStore';
 import githubStorage from '../services/githubStorage';
 import audioService from '../services/audioService';
 import PasswordGate from './Auth/PasswordGate';
-import CalendarView from './Calendar/CalendarView';
 import TodoList from './Todo/TodoList';
 import BulkActions from './Controls/BulkActions';
 import TodoistImport from './Import/TodoistImport';
@@ -12,13 +10,11 @@ import Settings from './Settings';
 import styles from './App.module.css';
 
 export default function App() {
-  const [viewDate, setViewDate] = useState(new Date());
   const [showSettings, setShowSettings] = useState(false);
   const [showImport, setShowImport] = useState(false);
   const [syncStatus, setSyncStatus] = useState('idle'); // idle, syncing, synced, error
-  const [showCalendar, setShowCalendar] = useState(true);
 
-  const { selectedDate, settings, todos, exportData, loadData } = useTodoStore();
+  const { settings, todos, exportData, loadData } = useTodoStore();
 
   // Initialize audio service with settings
   useEffect(() => {
@@ -83,20 +79,12 @@ export default function App() {
     }
   };
 
-  const formattedDate = format(new Date(selectedDate), 'EEEE, MMMM d, yyyy');
-
   return (
     <PasswordGate>
       <div className={styles.app}>
         {/* Header */}
         <header className={styles.header}>
-          <div className={styles.headerLeft}>
-            <h1 className={styles.logo}>Todo</h1>
-          </div>
-
-          <div className={styles.headerCenter}>
-            <h2 className={styles.dateTitle}>{formattedDate}</h2>
-          </div>
+          <h1 className={styles.logo}>Todo</h1>
 
           <div className={styles.headerRight}>
             <button
@@ -139,27 +127,11 @@ export default function App() {
                 <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
             </button>
-
-            <button
-              className={`${styles.iconBtn} ${showCalendar ? styles.active : ''}`}
-              onClick={() => setShowCalendar(!showCalendar)}
-              title={showCalendar ? 'Hide calendar' : 'Show calendar'}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
-              </svg>
-            </button>
           </div>
         </header>
 
         {/* Main content */}
         <main className={styles.main}>
-          {showCalendar && (
-            <CalendarView
-              viewDate={viewDate}
-              onViewDateChange={setViewDate}
-            />
-          )}
           <TodoList />
         </main>
 

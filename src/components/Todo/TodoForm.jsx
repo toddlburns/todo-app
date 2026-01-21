@@ -13,7 +13,7 @@ export default function TodoForm() {
   const [showSimilar, setShowSimilar] = useState(false);
   const inputRef = useRef(null);
 
-  const { addTodo, addSubItem, todos, selectedDate } = useTodoStore();
+  const { addTodo, addSubItem, todos } = useTodoStore();
 
   // Find similar items as user types
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function TodoForm() {
     addTodo({
       title: title.trim(),
       priority,
-      date: selectedDate,
     });
 
     setTitle('');

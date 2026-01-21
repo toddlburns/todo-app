@@ -4,9 +4,6 @@ import audioService from '../../services/audioService';
 import SubItem from './SubItem';
 import NotesEditor from './NotesEditor';
 import PrioritySelector from '../Controls/PrioritySelector';
-import RecurrenceSelector from '../Controls/RecurrenceSelector';
-import DatePicker from '../Controls/DatePicker';
-import { formatRecurrence } from '../../utils/recurrence';
 import styles from './TodoItem.module.css';
 
 const PRIORITY_COLORS = {
@@ -29,7 +26,6 @@ export default function TodoItem({ todo, isSelected }) {
 
   const {
     toggleComplete,
-    toggleRecurringComplete,
     updateTodo,
     deleteTodo,
     toggleSelectItem,
@@ -51,11 +47,7 @@ export default function TodoItem({ todo, isSelected }) {
   }, [showMenu]);
 
   const handleToggleComplete = () => {
-    if (todo.isRecurringInstance) {
-      toggleRecurringComplete(todo.id, todo.instanceDate);
-    } else {
-      toggleComplete(todo.id);
-    }
+    toggleComplete(todo.id);
 
     // Play completion sound
     if (!todo.completed && settings.soundEnabled) {
@@ -88,17 +80,8 @@ export default function TodoItem({ todo, isSelected }) {
     }
   };
 
-  const handleDateChange = (newDate) => {
-    updateTodo(todo.id, { date: newDate });
-    setShowMenu(false);
-  };
-
   const handlePriorityChange = (newPriority) => {
     updateTodo(todo.id, { priority: newPriority });
-  };
-
-  const handleRecurrenceChange = (recurrence) => {
-    updateTodo(todo.id, { recurrence });
   };
 
   const handleDelete = () => {
@@ -146,21 +129,11 @@ export default function TodoItem({ todo, isSelected }) {
             <span className={styles.title}>{todo.title}</span>
           )}
 
-          {(todo.recurrence?.enabled || totalSubItems > 0) && (
+          {totalSubItems > 0 && (
             <div className={styles.meta}>
-              {todo.recurrence?.enabled && (
-                <span className={styles.recurrence}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
-                    <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
-                  </svg>
-                  {formatRecurrence(todo.recurrence)}
-                </span>
-              )}
-              {totalSubItems > 0 && (
-                <span className={styles.subCount}>
-                  {completedSubItems}/{totalSubItems}
-                </span>
-              )}
+              <span className={styles.subCount}>
+                {completedSubItems}/{totalSubItems}
+              </span>
             </div>
           )}
         </div>
@@ -187,26 +160,10 @@ export default function TodoItem({ todo, isSelected }) {
       {showMenu && (
         <div className={styles.menu} ref={menuRef}>
           <div className={styles.menuSection}>
-            <label className={styles.menuLabel}>Move to date</label>
-            <DatePicker
-              value={todo.date}
-              onChange={handleDateChange}
-            />
-          </div>
-
-          <div className={styles.menuSection}>
             <label className={styles.menuLabel}>Priority</label>
             <PrioritySelector
               value={todo.priority}
               onChange={handlePriorityChange}
-            />
-          </div>
-
-          <div className={styles.menuSection}>
-            <label className={styles.menuLabel}>Repeat</label>
-            <RecurrenceSelector
-              value={todo.recurrence}
-              onChange={handleRecurrenceChange}
             />
           </div>
 
@@ -215,7 +172,7 @@ export default function TodoItem({ todo, isSelected }) {
               Edit title
             </button>
             <button onClick={() => { setExpanded(!expanded); setShowMenu(false); }}>
-              {expanded ? 'Hide details' : 'Show details'}
+              {expanded ? 'Hide notes' : 'Show notes'}
             </button>
             <button onClick={() => { setShowSubForm(true); setShowMenu(false); }}>
               Add sub-item
