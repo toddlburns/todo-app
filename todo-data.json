@@ -195,11 +195,19 @@
       "priority": 1,
       "date": "2026-01-22",
       "completed": false,
-      "recurrence": null,
+      "recurrence": {
+        "enabled": true,
+        "pattern": "weekly",
+        "days": [
+          3,
+          5
+        ],
+        "interval": 1
+      },
       "subItems": [],
       "createdAt": "2026-01-22T16:50:19.516Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:50:30.370Z"
+  "exportedAt": "2026-01-22T16:50:47.802Z"
 }
