@@ -169,7 +169,7 @@
       "id": "8d090d06-f74a-43df-af65-f83f6ae64b90",
       "title": "Clean Up Product Images",
       "notes": "",
-      "priority": 0,
+      "priority": 3,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -178,5 +178,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:48:32.072Z"
+  "exportedAt": "2026-01-22T16:48:42.699Z"
 }
