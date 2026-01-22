@@ -205,8 +205,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T16:50:19.516Z"
+    },
+    {
+      "id": "6da2341a-28ad-4ab3-b8cb-b98d32e2b4b4",
+      "title": "Merchandising - Check Genre Sliders on uDiscover",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T16:53:43.806Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:53:32.292Z"
+  "exportedAt": "2026-01-22T16:53:43.810Z"
 }
