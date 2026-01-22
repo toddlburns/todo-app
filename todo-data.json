@@ -1,28 +1,5 @@
 {
-  "todos": [
-    {
-      "id": "158bcc98-87a7-4173-8bfb-a2b05c02010f",
-      "title": "1",
-      "notes": "",
-      "priority": 0,
-      "date": "2026-01-21",
-      "completed": true,
-      "recurrence": null,
-      "subItems": [],
-      "createdAt": "2026-01-21T14:19:14.169Z"
-    },
-    {
-      "id": "fc0b688d-a4f3-400e-b5da-4eb2e8e90f74",
-      "title": "5",
-      "notes": "",
-      "priority": 0,
-      "date": "2026-01-21",
-      "completed": true,
-      "recurrence": null,
-      "subItems": [],
-      "createdAt": "2026-01-21T14:19:15.130Z"
-    }
-  ],
+  "todos": [],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T06:12:57.431Z"
+  "exportedAt": "2026-01-22T06:13:05.852Z"
 }
