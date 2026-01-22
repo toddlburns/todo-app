@@ -242,7 +242,7 @@
       "id": "f80763b3-6a8b-4044-8b5b-fecbac97c716",
       "title": "Check Search On Store",
       "notes": "",
-      "priority": 4,
+      "priority": 5,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": {
@@ -256,5 +256,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T17:29:19.066Z"
+  "exportedAt": "2026-01-22T17:29:23.148Z"
 }
