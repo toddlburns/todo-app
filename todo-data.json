@@ -22,7 +22,7 @@
       "id": "94d2a48e-6e4d-4dd5-bffc-61d2f92781d1",
       "title": "Social Caption?",
       "notes": "",
-      "priority": 0,
+      "priority": 1,
       "date": "2026-01-21",
       "completed": false,
       "recurrence": null,
@@ -31,5 +31,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T06:57:29.949Z"
+  "exportedAt": "2026-01-22T06:57:36.857Z"
 }
