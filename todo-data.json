@@ -6,7 +6,7 @@
       "notes": "",
       "priority": 0,
       "date": "2026-01-21",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-22T06:13:09.710Z"
@@ -17,12 +17,12 @@
       "notes": "",
       "priority": 0,
       "date": "2026-01-21",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-22T06:13:12.917Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T06:15:25.295Z"
+  "exportedAt": "2026-01-22T06:15:30.308Z"
 }
