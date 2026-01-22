@@ -267,10 +267,17 @@
         "days": [],
         "interval": 1
       },
-      "subItems": [],
+      "subItems": [
+        {
+          "id": "2506d4a9-cb58-446f-ba0b-f9765546e3be",
+          "title": "Sold Out?",
+          "completed": false,
+          "priority": 0
+        }
+      ],
       "createdAt": "2026-01-22T17:31:32.518Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T17:32:18.503Z"
+  "exportedAt": "2026-01-22T17:32:25.771Z"
 }
