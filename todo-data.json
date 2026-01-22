@@ -199,8 +199,7 @@
         "enabled": true,
         "pattern": "weekly",
         "days": [
-          3,
-          5
+          3
         ],
         "interval": 1
       },
@@ -209,5 +208,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:50:47.802Z"
+  "exportedAt": "2026-01-22T16:50:56.327Z"
 }
