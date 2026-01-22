@@ -121,7 +121,7 @@
       "id": "957ab704-0048-4c1c-9cdb-b4ef6a65f720",
       "title": "Stock Checks",
       "notes": "",
-      "priority": 0,
+      "priority": 4,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -130,5 +130,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:29:38.463Z"
+  "exportedAt": "2026-01-22T16:29:43.465Z"
 }
