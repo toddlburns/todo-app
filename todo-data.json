@@ -24,7 +24,7 @@
       "notes": "",
       "priority": 1,
       "date": "2026-01-21",
-      "completed": true,
+      "completed": false,
       "recurrence": {
         "enabled": true,
         "pattern": "daily",
@@ -36,5 +36,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T06:59:43.285Z"
+  "exportedAt": "2026-01-22T06:59:45.384Z"
 }
