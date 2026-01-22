@@ -33,8 +33,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T06:57:29.935Z"
+    },
+    {
+      "id": "679c6b18-4465-4e1b-aaec-59a272a7b494",
+      "title": "Frontline / New Release Sweep",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T15:57:21.365Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T15:57:12.868Z"
+  "exportedAt": "2026-01-22T15:57:21.368Z"
 }
