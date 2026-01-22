@@ -226,7 +226,7 @@
       "id": "720b2e48-8530-42b5-9653-f0dd80793dc1",
       "title": "Invoices - Check and approve all invoices",
       "notes": "",
-      "priority": 0,
+      "priority": 1,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -235,5 +235,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T17:03:22.609Z"
+  "exportedAt": "2026-01-22T17:03:27.446Z"
 }
