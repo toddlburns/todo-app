@@ -105,8 +105,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T15:59:36.767Z"
+    },
+    {
+      "id": "29533f4f-d3f2-4c23-8b7b-77690b528508",
+      "title": "Check Artist Page For Releases Going Live Tomorrow",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T16:05:17.671Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:05:14.876Z"
+  "exportedAt": "2026-01-22T16:05:17.674Z"
 }
