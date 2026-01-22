@@ -184,6 +184,12 @@
           "title": "Frank Zappa",
           "completed": false,
           "priority": 0
+        },
+        {
+          "id": "7cefcd3a-3184-417d-8db4-c0905c5e331a",
+          "title": "KISS on uD",
+          "completed": false,
+          "priority": 0
         }
       ],
       "createdAt": "2026-01-22T16:48:28.855Z"
@@ -301,5 +307,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T18:03:57.509Z"
+  "exportedAt": "2026-01-22T18:04:04.916Z"
 }
