@@ -132,8 +132,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T16:29:38.459Z"
+    },
+    {
+      "id": "d4c6ef37-c121-4623-be5d-69a0993a3cf4",
+      "title": "Check Advertising Tracker",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T16:43:26.499Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:43:21.024Z"
+  "exportedAt": "2026-01-22T16:43:26.502Z"
 }
