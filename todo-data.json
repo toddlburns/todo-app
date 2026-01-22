@@ -178,10 +178,17 @@
         "days": [],
         "interval": 1
       },
-      "subItems": [],
+      "subItems": [
+        {
+          "id": "19e7108b-3e35-4625-97de-79b26a00a7cf",
+          "title": "Frank Zappa",
+          "completed": false,
+          "priority": 0
+        }
+      ],
       "createdAt": "2026-01-22T16:48:28.855Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:48:48.009Z"
+  "exportedAt": "2026-01-22T16:48:54.566Z"
 }
