@@ -137,7 +137,7 @@
       "id": "d4c6ef37-c121-4623-be5d-69a0993a3cf4",
       "title": "Check Advertising Tracker",
       "notes": "",
-      "priority": 0,
+      "priority": 5,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -146,5 +146,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:43:26.502Z"
+  "exportedAt": "2026-01-22T16:43:32.062Z"
 }
