@@ -192,7 +192,7 @@
       "id": "981cc2d7-7924-450f-acce-0f845fadae31",
       "title": "Release Audit",
       "notes": "",
-      "priority": 0,
+      "priority": 1,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -201,5 +201,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:50:23.237Z"
+  "exportedAt": "2026-01-22T16:50:30.370Z"
 }
