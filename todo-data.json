@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": "b1032e77-e4aa-4575-9bfc-1186b805863f",
-      "title": "Frontline / New Release Final Sweep",
+      "title": "Final Weekly Frontline / New Release Final Sweep",
       "notes": "",
       "priority": 1,
       "date": "2026-01-22",
@@ -36,5 +36,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T15:57:04.978Z"
+  "exportedAt": "2026-01-22T15:57:12.868Z"
 }
