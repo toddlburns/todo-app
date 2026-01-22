@@ -38,7 +38,7 @@
       "id": "a34bf7d0-3a23-49b5-ad91-e686221feb06",
       "title": "Frontline / New Release Sweep",
       "notes": "",
-      "priority": 0,
+      "priority": 3,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -47,5 +47,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T15:58:26.593Z"
+  "exportedAt": "2026-01-22T15:58:31.348Z"
 }
