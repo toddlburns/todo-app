@@ -57,7 +57,7 @@
       "title": "Frontline / New Release Sweep",
       "notes": "",
       "priority": 3,
-      "date": "2026-01-22",
+      "date": "2026-01-27",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -167,5 +167,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:45:38.401Z"
+  "exportedAt": "2026-01-22T16:45:42.358Z"
 }
