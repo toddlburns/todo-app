@@ -92,7 +92,7 @@
       "id": "8f7d428b-e38f-4a50-8e0f-4cf81e258955",
       "title": "Street Date In Trending Section / Featured New Releases",
       "notes": "",
-      "priority": 0,
+      "priority": 5,
       "date": "2026-01-22",
       "completed": false,
       "recurrence": null,
@@ -101,5 +101,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T15:59:36.769Z"
+  "exportedAt": "2026-01-22T15:59:39.656Z"
 }
