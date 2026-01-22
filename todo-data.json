@@ -116,8 +116,19 @@
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-22T16:05:17.671Z"
+    },
+    {
+      "id": "957ab704-0048-4c1c-9cdb-b4ef6a65f720",
+      "title": "Stock Checks",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T16:29:38.459Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:29:36.331Z"
+  "exportedAt": "2026-01-22T16:29:38.463Z"
 }
