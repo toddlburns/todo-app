@@ -237,8 +237,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T17:03:22.605Z"
+    },
+    {
+      "id": "f80763b3-6a8b-4044-8b5b-fecbac97c716",
+      "title": "Check Search On Store",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T17:27:42.232Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T17:27:37.526Z"
+  "exportedAt": "2026-01-22T17:27:42.236Z"
 }
