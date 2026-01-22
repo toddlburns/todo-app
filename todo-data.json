@@ -221,8 +221,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T16:53:43.806Z"
+    },
+    {
+      "id": "720b2e48-8530-42b5-9653-f0dd80793dc1",
+      "title": "Invoices - Check and approve all invoices",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T17:03:22.605Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T17:03:19.275Z"
+  "exportedAt": "2026-01-22T17:03:22.609Z"
 }
