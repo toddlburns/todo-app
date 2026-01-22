@@ -148,8 +148,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T16:43:26.499Z"
+    },
+    {
+      "id": "deb17c48-b84b-463c-9936-a05f24bddcb3",
+      "title": "Add genres to releases on product set-up board",
+      "notes": "",
+      "priority": 0,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-22T16:44:42.581Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-22T16:44:39.775Z"
+  "exportedAt": "2026-01-22T16:44:42.584Z"
 }
