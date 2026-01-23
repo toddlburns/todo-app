@@ -5,7 +5,7 @@
       "title": "Final Weekly Frontline / New Release Final Sweep",
       "notes": "",
       "priority": 1,
-      "date": "2026-01-22",
+      "date": "2026-01-26",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -307,5 +307,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T04:01:09.168Z"
+  "exportedAt": "2026-01-23T04:01:44.783Z"
 }
