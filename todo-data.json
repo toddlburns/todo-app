@@ -112,7 +112,7 @@
       "notes": "https://umg.monday.com/boards/8004692949/views/204495931",
       "priority": 2,
       "date": "2026-01-22",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-22T16:05:17.671Z"
@@ -325,5 +325,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T16:13:41.130Z"
+  "exportedAt": "2026-01-23T16:13:49.872Z"
 }
