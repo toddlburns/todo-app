@@ -311,7 +311,7 @@
       "notes": "",
       "priority": 1,
       "date": "2026-01-22",
-      "completed": false,
+      "completed": true,
       "recurrence": {
         "enabled": true,
         "pattern": "workweek",
@@ -329,5 +329,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T03:47:00.981Z"
+  "exportedAt": "2026-01-23T03:47:05.014Z"
 }
