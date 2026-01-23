@@ -304,30 +304,8 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T17:33:01.859Z"
-    },
-    {
-      "id": "363282c6-fe0e-4e75-93ad-9d36f4b15896",
-      "title": "hello - is there a notes section bro",
-      "notes": "",
-      "priority": 1,
-      "date": "2026-01-22",
-      "completed": true,
-      "recurrence": {
-        "enabled": true,
-        "pattern": "workweek",
-        "days": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "interval": 1
-      },
-      "subItems": [],
-      "createdAt": "2026-01-23T03:45:51.893Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T03:47:50.848Z"
+  "exportedAt": "2026-01-23T03:47:58.805Z"
 }
