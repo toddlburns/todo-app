@@ -109,7 +109,7 @@
     {
       "id": "29533f4f-d3f2-4c23-8b7b-77690b528508",
       "title": "Check Artist Page For Releases Going Live Tomorrow",
-      "notes": "",
+      "notes": "https://umg.monday.com/boards/8004692949/views/204495931",
       "priority": 2,
       "date": "2026-01-22",
       "completed": false,
@@ -325,5 +325,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T16:13:03.754Z"
+  "exportedAt": "2026-01-23T16:13:12.499Z"
 }
