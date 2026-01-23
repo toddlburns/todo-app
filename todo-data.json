@@ -328,7 +328,7 @@
         {
           "id": "079ae539-c741-4d4b-b175-440f419328a4",
           "title": "here's a sub-item",
-          "completed": false,
+          "completed": true,
           "priority": 0
         }
       ],
@@ -336,5 +336,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T03:46:50.438Z"
+  "exportedAt": "2026-01-23T03:46:58.815Z"
 }
