@@ -304,8 +304,19 @@
       },
       "subItems": [],
       "createdAt": "2026-01-22T17:33:01.859Z"
+    },
+    {
+      "id": "5cb78fa2-150e-44ea-8b56-71f98b286e33",
+      "title": "Banner updates to Rob",
+      "notes": "",
+      "priority": 5,
+      "date": "2026-01-22",
+      "completed": false,
+      "recurrence": null,
+      "subItems": [],
+      "createdAt": "2026-01-23T13:52:40.519Z"
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-23T13:52:26.634Z"
+  "exportedAt": "2026-01-23T13:52:40.525Z"
 }
