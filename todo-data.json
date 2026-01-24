@@ -239,7 +239,7 @@
       "title": "Invoices - Check and approve all invoices",
       "notes": "",
       "priority": 1,
-      "date": "2026-01-23",
+      "date": "2026-01-26",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1162,5 +1162,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T16:59:44.460Z"
+  "exportedAt": "2026-01-24T17:00:17.766Z"
 }
