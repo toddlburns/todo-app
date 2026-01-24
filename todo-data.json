@@ -23,7 +23,7 @@
       "title": "Social Caption?",
       "notes": "",
       "priority": 1,
-      "date": "2026-01-22",
+      "date": "2026-01-23",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1156,5 +1156,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T16:59:20.017Z"
+  "exportedAt": "2026-01-24T16:59:28.589Z"
 }
