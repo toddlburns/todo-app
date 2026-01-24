@@ -339,7 +339,7 @@
       "title": "Invoices - Check and approve all",
       "notes": "Just a heads-up that I approved your latest invoice!",
       "priority": 1,
-      "date": "2026-01-24",
+      "date": "2026-01-26",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1150,5 +1150,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T16:56:17.409Z"
+  "exportedAt": "2026-01-24T16:56:26.881Z"
 }
