@@ -117,7 +117,7 @@
       "title": "Check Artist Page For Releases Going Live Tomorrow",
       "notes": "https://umg.monday.com/boards/8004692949/views/204495931",
       "priority": 2,
-      "date": "2026-01-22",
+      "date": "2026-01-23",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1145,5 +1145,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T17:00:59.280Z"
+  "exportedAt": "2026-01-24T17:01:03.173Z"
 }
