@@ -336,7 +336,7 @@
     },
     {
       "id": "ec7a5aff-db4b-42a2-b4fe-589d2b6c4c2e",
-      "title": "Invoices - Check and approve all invoices",
+      "title": "Invoices - Check and approve all",
       "notes": "Just a heads-up that I approved your latest invoice!",
       "priority": 2,
       "date": "2026-01-24",
@@ -1139,5 +1139,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T16:55:23.170Z"
+  "exportedAt": "2026-01-24T16:56:04.988Z"
 }
