@@ -243,8 +243,14 @@
       "completed": false,
       "recurrence": {
         "enabled": true,
-        "pattern": "daily",
-        "days": [],
+        "pattern": "workweek",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
         "interval": 1
       },
       "subItems": [],
@@ -1156,5 +1162,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T16:59:28.589Z"
+  "exportedAt": "2026-01-24T16:59:42.385Z"
 }
