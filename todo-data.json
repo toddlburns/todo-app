@@ -235,28 +235,6 @@
       "createdAt": "2026-01-22T16:53:43.806Z"
     },
     {
-      "id": "720b2e48-8530-42b5-9653-f0dd80793dc1",
-      "title": "Invoices - Check and approve all invoices",
-      "notes": "",
-      "priority": 1,
-      "date": "2026-01-26",
-      "completed": false,
-      "recurrence": {
-        "enabled": true,
-        "pattern": "workweek",
-        "days": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "interval": 1
-      },
-      "subItems": [],
-      "createdAt": "2026-01-22T17:03:22.605Z"
-    },
-    {
       "id": "f80763b3-6a8b-4044-8b5b-fecbac97c716",
       "title": "Check Search On Store",
       "notes": "",
@@ -1162,5 +1140,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-24T17:00:17.766Z"
+  "exportedAt": "2026-01-24T17:00:29.823Z"
 }
