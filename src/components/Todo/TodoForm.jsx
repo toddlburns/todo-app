@@ -5,12 +5,14 @@ import { findSimilarItems } from '../../utils/similarity';
 import VoiceInput from '../Controls/VoiceInput';
 import PrioritySelector from '../Controls/PrioritySelector';
 import DatePicker from '../Controls/DatePicker';
+import RecurrenceSelector from '../Controls/RecurrenceSelector';
 import styles from './TodoForm.module.css';
 
 export default function TodoForm() {
   const [title, setTitle] = useState('');
   const [priority, setPriority] = useState(0);
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
+  const [recurrence, setRecurrence] = useState(null);
   const [showOptions, setShowOptions] = useState(false);
   const [similarItems, setSimilarItems] = useState([]);
   const [showSimilar, setShowSimilar] = useState(false);
@@ -38,11 +40,13 @@ export default function TodoForm() {
       title: title.trim(),
       priority,
       date,
+      recurrence,
     });
 
     setTitle('');
     setPriority(0);
     setDate(format(new Date(), 'yyyy-MM-dd'));
+    setRecurrence(null);
     setShowSimilar(false);
     setShowOptions(false);
     inputRef.current?.focus();
@@ -112,6 +116,10 @@ export default function TodoForm() {
             <div className={styles.optionGroup}>
               <label className={styles.optionLabel}>Priority</label>
               <PrioritySelector value={priority} onChange={setPriority} />
+            </div>
+            <div className={styles.optionGroup}>
+              <label className={styles.optionLabel}>Repeat</label>
+              <RecurrenceSelector value={recurrence} onChange={setRecurrence} />
             </div>
           </div>
         )}

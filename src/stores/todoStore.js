@@ -2,6 +2,12 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
+import { getNextOccurrence } from '../utils/recurrence';
+
+// BroadcastChannel for cross-tab sync
+const channel = typeof BroadcastChannel !== 'undefined'
+  ? new BroadcastChannel('todo-sync')
+  : null;
 
 const useTodoStore = create(
   persist(
@@ -72,9 +78,20 @@ const useTodoStore = create(
       })),
 
       toggleComplete: (id) => set((state) => ({
-        todos: state.todos.map(todo =>
-          todo.id === id ? { ...todo, completed: !todo.completed } : todo
-        )
+        todos: state.todos.map(todo => {
+          if (todo.id !== id) return todo;
+
+          // If it's a recurring item and not currently completed, reschedule to next date
+          if (todo.recurrence?.enabled && !todo.completed) {
+            const nextDate = getNextOccurrence(todo.recurrence, todo.date);
+            if (nextDate) {
+              return { ...todo, date: nextDate };
+            }
+          }
+
+          // For non-recurring items, toggle completion
+          return { ...todo, completed: !todo.completed };
+        })
       })),
 
       // Recurring item completion tracking
@@ -215,6 +232,27 @@ const useTodoStore = create(
         todos: data.todos || [],
         completedOccurrences: data.completedOccurrences || {},
       }),
+
+      // Broadcast changes to other tabs
+      broadcastSync: () => {
+        if (channel) {
+          const state = get();
+          channel.postMessage({
+            type: 'SYNC',
+            todos: state.todos,
+            completedOccurrences: state.completedOccurrences,
+            timestamp: Date.now(),
+          });
+        }
+      },
+
+      // Receive sync from other tabs
+      receiveSync: (data) => {
+        set({
+          todos: data.todos || [],
+          completedOccurrences: data.completedOccurrences || {},
+        });
+      },
     }),
     {
       name: 'todo-storage',
@@ -222,6 +260,7 @@ const useTodoStore = create(
         todos: state.todos,
         settings: state.settings,
         completedOccurrences: state.completedOccurrences,
+        isAuthenticated: state.isAuthenticated,
       }),
     }
   )
@@ -231,8 +270,9 @@ const useTodoStore = create(
 function isRecurringOnDate(todo, dateStr) {
   if (!todo.recurrence?.enabled) return false;
 
-  const date = new Date(dateStr);
-  const startDate = new Date(todo.date);
+  // Parse dates as local time (noon) to avoid timezone issues
+  const date = new Date(dateStr + 'T12:00:00');
+  const startDate = new Date(todo.date + 'T12:00:00');
 
   // Don't show before the start date
   if (date < startDate) return false;
@@ -243,6 +283,10 @@ function isRecurringOnDate(todo, dateStr) {
     case 'daily': {
       const diffDays = Math.floor((date - startDate) / (1000 * 60 * 60 * 24));
       return diffDays % interval === 0;
+    }
+    case 'workweek': {
+      const dayOfWeek = date.getDay();
+      return dayOfWeek >= 1 && dayOfWeek <= 5; // Mon-Fri
     }
     case 'weekly': {
       const dayOfWeek = date.getDay();
@@ -262,5 +306,23 @@ function isRecurringOnDate(todo, dateStr) {
       return false;
   }
 }
+
+// Listen for sync messages from other tabs
+if (channel) {
+  channel.onmessage = (event) => {
+    if (event.data.type === 'SYNC') {
+      useTodoStore.getState().receiveSync(event.data);
+    }
+  };
+}
+
+// Subscribe to store changes and broadcast
+useTodoStore.subscribe((state, prevState) => {
+  // Only broadcast if todos or completedOccurrences changed
+  if (state.todos !== prevState.todos ||
+      state.completedOccurrences !== prevState.completedOccurrences) {
+    state.broadcastSync();
+  }
+});
 
 export default useTodoStore;

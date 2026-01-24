@@ -18,7 +18,7 @@ export default function RecurrenceSelector({ value, onChange }) {
     onChange({
       enabled: true,
       pattern,
-      days: pattern === 'weekly' ? selectedDays : [],
+      days: pattern === 'weekly' ? selectedDays : (pattern === 'workweek' ? [1, 2, 3, 4, 5] : []),
       interval: 1,
     });
     setShowOptions(false);

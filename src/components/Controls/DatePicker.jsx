@@ -6,9 +6,10 @@ const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 export default function DatePicker({ value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [viewDate, setViewDate] = useState(value ? new Date(value) : new Date());
+  // Append T12:00:00 to parse as local noon time to avoid timezone issues
+  const [viewDate, setViewDate] = useState(value ? new Date(value + 'T12:00:00') : new Date());
 
-  const selectedDate = value ? new Date(value) : null;
+  const selectedDate = value ? new Date(value + 'T12:00:00') : null;
 
   const monthStart = startOfMonth(viewDate);
   const monthEnd = endOfMonth(viewDate);
@@ -36,7 +37,7 @@ export default function DatePicker({ value, onChange }) {
         className={styles.trigger}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {value ? format(new Date(value), 'MMM d, yyyy') : 'Select date'}
+        {value ? format(new Date(value + 'T12:00:00'), 'MMM d, yyyy') : 'Select date'}
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
         </svg>

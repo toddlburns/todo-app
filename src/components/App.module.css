@@ -106,6 +106,26 @@
   border-radius: 50%;
 }
 
+.syncNotConfigured {
+  color: var(--text-tertiary);
+}
+
+.syncSetup {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: #ff9800;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
 .main {
   flex: 1;
   padding: 20px;

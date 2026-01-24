@@ -31,6 +31,24 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+.highlightSection {
+  background: rgba(255, 152, 0, 0.08);
+  margin: -12px -16px 24px;
+  padding: 12px 16px 24px;
+  border-radius: 8px;
+  border-bottom: none;
+}
+
+.syncAlert {
+  background: #ff9800;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
 .section:last-of-type {
   border-bottom: none;
   margin-bottom: 0;

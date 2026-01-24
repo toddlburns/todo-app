@@ -6,6 +6,8 @@ import SubItem from './SubItem';
 import NotesEditor from './NotesEditor';
 import PrioritySelector from '../Controls/PrioritySelector';
 import DatePicker from '../Controls/DatePicker';
+import RecurrenceSelector from '../Controls/RecurrenceSelector';
+import { formatRecurrence } from '../../utils/recurrence';
 import styles from './TodoItem.module.css';
 
 const PRIORITY_COLORS = {
@@ -19,21 +21,25 @@ const PRIORITY_COLORS = {
 
 function formatDateLabel(dateStr) {
   if (!dateStr) return '';
-  const date = new Date(dateStr);
-  if (isToday(date)) return 'Today';
-  if (isTomorrow(date)) return 'Tomorrow';
-  if (isYesterday(date)) return 'Yesterday';
-  return format(date, 'MMM d');
+  // Append T12:00:00 to parse as local time (noon) to avoid timezone issues
+  const date = new Date(dateStr + 'T12:00:00');
+  const shortDate = format(date, 'EEE, MMM d');
+  if (isToday(date)) return `Today, ${shortDate}`;
+  if (isTomorrow(date)) return `Tomorrow, ${shortDate}`;
+  if (isYesterday(date)) return `Yesterday, ${shortDate}`;
+  return shortDate;
 }
 
-export default function TodoItem({ todo, isSelected }) {
+export default function TodoItem({ todo, isSelected, dragHandleProps }) {
   const [showMenu, setShowMenu] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(todo.title);
   const [showSubForm, setShowSubForm] = useState(false);
   const [newSubTitle, setNewSubTitle] = useState('');
-  const [expanded, setExpanded] = useState(false);
+  const [notesExpanded, setNotesExpanded] = useState(false);
+  const [subItemsCollapsed, setSubItemsCollapsed] = useState(true);
   const menuRef = useRef(null);
+  const titleInputRef = useRef(null);
 
   const {
     toggleComplete,
@@ -57,6 +63,21 @@ export default function TodoItem({ todo, isSelected }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showMenu]);
 
+  // Focus title input when editing starts
+  useEffect(() => {
+    if (isEditing && titleInputRef.current) {
+      titleInputRef.current.focus();
+      titleInputRef.current.select();
+    }
+  }, [isEditing]);
+
+  // Sync editTitle with todo.title when not editing
+  useEffect(() => {
+    if (!isEditing) {
+      setEditTitle(todo.title);
+    }
+  }, [todo.title, isEditing]);
+
   const handleToggleComplete = () => {
     toggleComplete(todo.id);
 
@@ -68,18 +89,39 @@ export default function TodoItem({ todo, isSelected }) {
   };
 
   const handleItemClick = (e) => {
-    // Don't open menu if clicking checkbox or inside menu
-    if (e.target.closest(`.${styles.checkbox}`) || e.target.closest(`.${styles.menu}`)) {
+    // Don't open menu if clicking checkbox, inside menu, title, or notes
+    if (e.target.closest(`.${styles.checkbox}`) ||
+        e.target.closest(`.${styles.menu}`) ||
+        e.target.closest(`.${styles.title}`) ||
+        e.target.closest(`.${styles.editInput}`) ||
+        e.target.closest(`.${styles.notesSection}`) ||
+        e.target.closest(`.${styles.notesEditor}`)) {
       return;
     }
     setShowMenu(!showMenu);
   };
 
+  const handleTitleClick = (e) => {
+    e.stopPropagation();
+    setIsEditing(true);
+  };
+
   const handleSaveEdit = () => {
     if (editTitle.trim()) {
       updateTodo(todo.id, { title: editTitle.trim() });
+    } else {
+      setEditTitle(todo.title);
     }
     setIsEditing(false);
+  };
+
+  const handleTitleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSaveEdit();
+    } else if (e.key === 'Escape') {
+      setEditTitle(todo.title);
+      setIsEditing(false);
+    }
   };
 
   const handleAddSubItem = (e) => {
@@ -99,16 +141,25 @@ export default function TodoItem({ todo, isSelected }) {
     updateTodo(todo.id, { date: newDate });
   };
 
+  const handleRecurrenceChange = (newRecurrence) => {
+    updateTodo(todo.id, { recurrence: newRecurrence });
+  };
+
   const handleDelete = () => {
     deleteTodo(todo.id);
     setShowMenu(false);
+  };
+
+  const handleNotesToggle = (e) => {
+    e.stopPropagation();
+    setNotesExpanded(!notesExpanded);
   };
 
   const completedSubItems = todo.subItems?.filter(s => s.completed).length || 0;
   const totalSubItems = todo.subItems?.length || 0;
 
   const dateLabel = formatDateLabel(todo.date);
-  const isOverdue = todo.date && isPast(new Date(todo.date)) && !isToday(new Date(todo.date)) && !todo.completed;
+  const isOverdue = todo.date && isPast(new Date(todo.date + 'T23:59:59')) && !isToday(new Date(todo.date + 'T12:00:00')) && !todo.completed;
 
   return (
     <div
@@ -116,6 +167,13 @@ export default function TodoItem({ todo, isSelected }) {
       style={{ '--priority-color': PRIORITY_COLORS[todo.priority] }}
     >
       <div className={styles.main} onClick={handleItemClick}>
+        {/* Drag Handle */}
+        <div className={styles.dragHandle} {...dragHandleProps}>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+          </svg>
+        </div>
+
         <button
           className={styles.checkbox}
           onClick={(e) => {
@@ -134,17 +192,17 @@ export default function TodoItem({ todo, isSelected }) {
         <div className={styles.content}>
           {isEditing ? (
             <input
+              ref={titleInputRef}
               type="text"
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
               onBlur={handleSaveEdit}
-              onKeyDown={(e) => e.key === 'Enter' && handleSaveEdit()}
+              onKeyDown={handleTitleKeyDown}
               className={styles.editInput}
-              autoFocus
               onClick={(e) => e.stopPropagation()}
             />
           ) : (
-            <span className={styles.title}>{todo.title}</span>
+            <span className={styles.title} onClick={handleTitleClick}>{todo.title}</span>
           )}
 
           <div className={styles.meta}>
@@ -157,8 +215,29 @@ export default function TodoItem({ todo, isSelected }) {
               </span>
             )}
             {totalSubItems > 0 && (
-              <span className={styles.subCount}>
+              <button
+                className={styles.subCount}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSubItemsCollapsed(!subItemsCollapsed);
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className={`${styles.subChevron} ${!subItemsCollapsed ? styles.expanded : ''}`}
+                >
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
                 {completedSubItems}/{totalSubItems}
+              </button>
+            )}
+            {todo.recurrence?.enabled && (
+              <span className={styles.recurrence}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+                  <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                </svg>
+                {formatRecurrence(todo.recurrence)}
               </span>
             )}
           </div>
@@ -182,6 +261,31 @@ export default function TodoItem({ todo, isSelected }) {
         </button>
       </div>
 
+      {/* Notes Section - always visible with toggle */}
+      <div className={styles.notesSection}>
+        <button
+          className={styles.notesToggle}
+          onClick={handleNotesToggle}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className={`${styles.notesChevron} ${notesExpanded ? styles.expanded : ''}`}
+          >
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" className={styles.notesIcon}>
+            <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
+          </svg>
+          <span className={styles.notesLabel}>
+            {todo.notes ? 'Notes' : 'Add notes'}
+          </span>
+          {todo.notes && !notesExpanded && (
+            <span className={styles.notesPreviewText}>{todo.notes}</span>
+          )}
+        </button>
+      </div>
+
       {/* Dropdown Menu */}
       {showMenu && (
         <div className={styles.menu} ref={menuRef}>
@@ -201,13 +305,15 @@ export default function TodoItem({ todo, isSelected }) {
             />
           </div>
 
+          <div className={styles.menuSection}>
+            <label className={styles.menuLabel}>Repeat</label>
+            <RecurrenceSelector
+              value={todo.recurrence}
+              onChange={handleRecurrenceChange}
+            />
+          </div>
+
           <div className={styles.menuActions}>
-            <button onClick={() => { setIsEditing(true); setShowMenu(false); }}>
-              Edit title
-            </button>
-            <button onClick={() => { setExpanded(!expanded); setShowMenu(false); }}>
-              {expanded ? 'Hide notes' : 'Show notes'}
-            </button>
             <button onClick={() => { setShowSubForm(true); setShowMenu(false); }}>
               Add sub-item
             </button>
@@ -218,9 +324,9 @@ export default function TodoItem({ todo, isSelected }) {
         </div>
       )}
 
-      {/* Expanded Details */}
-      {expanded && (
-        <div className={styles.details}>
+      {/* Expanded Notes Editor */}
+      {notesExpanded && (
+        <div className={styles.notesEditor}>
           <NotesEditor
             value={todo.notes}
             onChange={(notes) => updateTodo(todo.id, { notes })}
@@ -229,9 +335,9 @@ export default function TodoItem({ todo, isSelected }) {
       )}
 
       {/* Sub-items */}
-      {(todo.subItems?.length > 0 || showSubForm) && (
+      {((!subItemsCollapsed && todo.subItems?.length > 0) || showSubForm) && (
         <div className={styles.subItems}>
-          {todo.subItems?.map(subItem => (
+          {!subItemsCollapsed && todo.subItems?.map(subItem => (
             <SubItem
               key={subItem.id}
               subItem={subItem}

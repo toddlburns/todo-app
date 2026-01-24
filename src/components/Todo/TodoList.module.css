@@ -34,6 +34,21 @@
   flex: 1;
 }
 
+.daySection {
+  margin-bottom: 24px;
+}
+
+.dayHeader {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .empty {
   text-align: center;
   padding: 60px 20px;

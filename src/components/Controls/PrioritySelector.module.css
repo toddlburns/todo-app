@@ -1,10 +1,11 @@
 .container {
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .option {
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 4px;
   font-size: 13px;
   font-weight: 500;

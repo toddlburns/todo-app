@@ -76,10 +76,15 @@ export default function Settings({ onClose }) {
         <h2 className={styles.title}>Settings</h2>
 
         {/* GitHub Storage Section */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>GitHub Storage</h3>
+        <section className={`${styles.section} ${!settings.githubToken ? styles.highlightSection : ''}`}>
+          <h3 className={styles.sectionTitle}>Cross-Device Sync</h3>
+          {!settings.githubToken && (
+            <div className={styles.syncAlert}>
+              Set up GitHub sync to access your tasks on all devices
+            </div>
+          )}
           <p className={styles.sectionDesc}>
-            Store your tasks in a private GitHub repository for backup and sync.
+            Store your tasks in a private GitHub repository for backup and sync across devices.
           </p>
 
           <div className={styles.field}>
