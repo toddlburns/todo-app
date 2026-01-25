@@ -561,17 +561,6 @@
       "createdAt": "2026-01-24T16:53:25.744Z"
     },
     {
-      "id": "9b605a8a-183f-4f84-93ad-cc827026a071",
-      "title": "Stock Checks",
-      "notes": "",
-      "priority": 0,
-      "date": "2026-01-24",
-      "completed": false,
-      "recurrence": null,
-      "subItems": [],
-      "createdAt": "2026-01-24T16:53:25.744Z"
-    },
-    {
       "id": "bae3e869-a1bb-4fa8-aa8a-4a3e90bb2980",
       "title": "UMe O&O Merchandising Overview Work",
       "notes": "https://docs.google.com/spreadsheets/d/1BYIyxjS8eoCVMww5QRxwOzY6A88Fs3L-B7l7xRzr97Y/edit?gid=1072621485#gid=1072621485",
@@ -1145,5 +1134,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T02:56:24.371Z"
+  "exportedAt": "2026-01-25T02:56:31.394Z"
 }
