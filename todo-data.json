@@ -883,7 +883,7 @@
       "id": "831d2878-9163-4ff3-955d-5d636990a1df",
       "title": "work on schedule for album cover art WMA",
       "notes": "Supertramp",
-      "priority": 0,
+      "priority": 4,
       "date": "2026-01-24",
       "completed": false,
       "recurrence": null,
@@ -1134,5 +1134,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:04:28.344Z"
+  "exportedAt": "2026-01-25T03:04:51.231Z"
 }
