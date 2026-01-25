@@ -289,10 +289,6 @@ export default function TodoItem({ todo, isSelected, dragHandleProps }) {
             >
               <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
             </svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" className={styles.notesIcon}>
-              <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
-            </svg>
-            <span className={styles.notesLabel}>Notes</span>
             {!notesExpanded && (
               <span className={styles.notesPreviewText}>{todo.notes}</span>
             )}
