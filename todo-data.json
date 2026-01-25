@@ -501,7 +501,7 @@
       "title": "News - Put All New News Items In The CMS",
       "notes": "",
       "priority": 2,
-      "date": "2026-01-24",
+      "date": "2026-01-26",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1136,5 +1136,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:35:53.166Z"
+  "exportedAt": "2026-01-25T03:36:05.108Z"
 }
