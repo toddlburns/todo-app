@@ -147,7 +147,7 @@
     {
       "id": "d4c6ef37-c121-4623-be5d-69a0993a3cf4",
       "title": "Check Advertising Tracker",
-      "notes": "",
+      "notes": "https://umg.monday.com/boards/673348943",
       "priority": 5,
       "date": "2026-01-22",
       "completed": false,
@@ -1141,5 +1141,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:19:17.726Z"
+  "exportedAt": "2026-01-25T03:19:19.837Z"
 }
