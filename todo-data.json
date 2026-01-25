@@ -500,7 +500,7 @@
       "id": "3ebaadab-d2a1-4cbf-8135-864ecb4b8ec2",
       "title": "News - Put All New News Items In The CMS",
       "notes": "",
-      "priority": 4,
+      "priority": 3,
       "date": "2026-01-24",
       "completed": false,
       "recurrence": null,
@@ -1125,5 +1125,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:35:26.441Z"
+  "exportedAt": "2026-01-25T03:35:44.325Z"
 }
