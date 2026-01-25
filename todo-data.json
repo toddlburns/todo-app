@@ -498,7 +498,7 @@
     },
     {
       "id": "3ebaadab-d2a1-4cbf-8135-864ecb4b8ec2",
-      "title": "News - Put All New News Items In The CMS",
+      "title": "News",
       "notes": "",
       "priority": 2,
       "date": "2026-01-26",
@@ -1136,5 +1136,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:36:05.108Z"
+  "exportedAt": "2026-01-25T03:36:26.644Z"
 }
