@@ -1017,7 +1017,7 @@
       "id": "86d28aaa-a6b9-4e87-8da3-1f9ed2660023",
       "title": "Check Linktree",
       "notes": "https://linktr.ee/udiscovermusic.com",
-      "priority": 2,
+      "priority": 5,
       "date": "2026-01-24",
       "completed": false,
       "recurrence": null,
@@ -1125,5 +1125,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:29:23.388Z"
+  "exportedAt": "2026-01-25T03:29:52.549Z"
 }
