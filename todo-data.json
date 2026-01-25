@@ -400,7 +400,7 @@
       "title": "Resurgent - Send Trending Song Updates To Tim",
       "notes": "",
       "priority": 4,
-      "date": "2026-01-24",
+      "date": "2026-01-27",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1141,5 +1141,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:05:11.166Z"
+  "exportedAt": "2026-01-25T03:05:21.274Z"
 }
