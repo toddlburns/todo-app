@@ -499,7 +499,7 @@
     {
       "id": "3ebaadab-d2a1-4cbf-8135-864ecb4b8ec2",
       "title": "News",
-      "notes": "Create CMS Shells For All News Items\nAssign News Items To Freelancer\n\n\n\n",
+      "notes": "Create CMS Shells For All News Items\nAssign News Items To Freelancer\nSend Priority List To News Writer\n\n\n\n",
       "priority": 2,
       "date": "2026-01-26",
       "completed": false,
@@ -1136,5 +1136,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:38:42.521Z"
+  "exportedAt": "2026-01-25T03:38:50.037Z"
 }
