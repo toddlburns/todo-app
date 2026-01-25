@@ -131,7 +131,7 @@
     {
       "id": "957ab704-0048-4c1c-9cdb-b4ef6a65f720",
       "title": "Stock Checks",
-      "notes": "https://shop.udiscovermusic.com/collections/sold-out-2026-ume-artist-roster\n\nhttps://shop.udiscovermusic.com/collections/soldouttest?sort_by=created-descending\n\n\n\n\n\n\n",
+      "notes": "https://shop.udiscovermusic.com/collections/sold-out-2026-ume-artist-roster\n\n\n\n\n\n\n\n",
       "priority": 2,
       "date": "2026-01-22",
       "completed": false,
@@ -1134,5 +1134,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T02:57:16.159Z"
+  "exportedAt": "2026-01-25T02:57:19.202Z"
 }
