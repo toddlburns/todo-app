@@ -524,7 +524,7 @@
       "notes": "",
       "priority": 4,
       "date": "2026-01-24",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-24T16:53:25.744Z"
@@ -535,7 +535,7 @@
       "notes": "",
       "priority": 4,
       "date": "2026-01-24",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-24T16:53:25.744Z"
@@ -546,7 +546,7 @@
       "notes": "",
       "priority": 4,
       "date": "2026-01-24",
-      "completed": false,
+      "completed": true,
       "recurrence": null,
       "subItems": [],
       "createdAt": "2026-01-24T16:53:25.744Z"
@@ -1136,5 +1136,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:38:50.037Z"
+  "exportedAt": "2026-01-25T03:39:05.866Z"
 }
