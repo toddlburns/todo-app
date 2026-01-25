@@ -92,7 +92,7 @@
 }
 
 .title {
-  font-size: 15px;
+  font-size: 12px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -111,7 +111,7 @@
   display: flex;
   gap: 12px;
   margin-top: 4px;
-  font-size: 10px;
+  font-size: 9px;
   color: var(--text-secondary);
 }
 
@@ -331,7 +331,7 @@
   border-radius: 6px;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 10px;
+  font-size: 9px;
   text-align: left;
 }
 
@@ -382,7 +382,7 @@
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
   cursor: pointer;
   transition: opacity 0.15s ease;
@@ -395,7 +395,7 @@
 /* Mobile styles */
 @media (max-width: 600px) {
   .title {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .date {
@@ -450,7 +450,6 @@
   }
 
   .notesToggle {
-    font-size: 9px;
     padding: 4px 6px;
   }
 
