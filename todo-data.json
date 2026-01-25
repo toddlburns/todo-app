@@ -1000,7 +1000,7 @@
       "id": "75dff6a9-f75b-4d92-8104-d9a694a04963",
       "title": "brenda lee website - passing?",
       "notes": "",
-      "priority": 5,
+      "priority": 0,
       "date": "2026-01-24",
       "completed": false,
       "recurrence": null,
@@ -1141,5 +1141,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:21:58.555Z"
+  "exportedAt": "2026-01-25T03:22:12.169Z"
 }
