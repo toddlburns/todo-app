@@ -563,7 +563,7 @@
     {
       "id": "9b605a8a-183f-4f84-93ad-cc827026a071",
       "title": "Stock Checks",
-      "notes": "[Sold Out - 2026 UMe Artist Roster - uDiscover Music](https://shop.udiscovermusic.com/collections/sold-out-2026-ume-artist-roster)",
+      "notes": "",
       "priority": 0,
       "date": "2026-01-24",
       "completed": false,
@@ -1145,5 +1145,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T02:55:29.288Z"
+  "exportedAt": "2026-01-25T02:56:24.371Z"
 }
