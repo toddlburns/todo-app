@@ -500,10 +500,21 @@
       "id": "3ebaadab-d2a1-4cbf-8135-864ecb4b8ec2",
       "title": "News - Put All New News Items In The CMS",
       "notes": "",
-      "priority": 3,
+      "priority": 2,
       "date": "2026-01-24",
       "completed": false,
-      "recurrence": null,
+      "recurrence": {
+        "enabled": true,
+        "pattern": "workweek",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "interval": 1
+      },
       "subItems": [],
       "createdAt": "2026-01-24T16:53:25.744Z"
     },
@@ -1125,5 +1136,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:35:44.325Z"
+  "exportedAt": "2026-01-25T03:35:53.166Z"
 }
