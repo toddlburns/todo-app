@@ -285,22 +285,6 @@
       "createdAt": "2026-01-22T17:31:32.518Z"
     },
     {
-      "id": "4b798726-4c1c-4a66-a6bf-0816c0441ca7",
-      "title": "Check Linktree",
-      "notes": "",
-      "priority": 5,
-      "date": "2026-01-24",
-      "completed": false,
-      "recurrence": {
-        "enabled": true,
-        "pattern": "daily",
-        "days": [],
-        "interval": 1
-      },
-      "subItems": [],
-      "createdAt": "2026-01-22T17:33:01.859Z"
-    },
-    {
       "id": "5cb78fa2-150e-44ea-8b56-71f98b286e33",
       "title": "Banner updates to Rob",
       "notes": "https://docs.google.com/spreadsheets/d/1Hz4KNhZmYrwhYJyLg3SYQaQwwqYXEY4kpyQoFoPmFnE/edit?gid=0#gid=0\n\nhttps://universalmusicgroup-my.sharepoint.com/:x:/r/personal/todd_burns_umusic_com/_layouts/15/doc2.aspx?sourcedoc=%7B6D61B9B7-5CB1-429D-8A9A-FBD06937AC39%7D&file=UMe%20O&O%20Store%20Banners.xlsx=&action=default&mobileredirect=true",
@@ -1141,5 +1125,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:29:08.835Z"
+  "exportedAt": "2026-01-25T03:29:23.388Z"
 }
