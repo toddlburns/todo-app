@@ -237,8 +237,22 @@ export default function TodoItem({ todo, isSelected, dragHandleProps }) {
                 <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
                   <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
                 </svg>
-                {formatRecurrence(todo.recurrence)}
+                <span className={styles.recurrenceText}>{formatRecurrence(todo.recurrence)}</span>
               </span>
+            )}
+            {!todo.notes && (
+              <button
+                className={styles.addNotesInline}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setNotesExpanded(true);
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+                  <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
+                </svg>
+                <span className={styles.addNotesText}>Add notes</span>
+              </button>
             )}
           </div>
         </div>
@@ -261,30 +275,30 @@ export default function TodoItem({ todo, isSelected, dragHandleProps }) {
         </button>
       </div>
 
-      {/* Notes Section - always visible with toggle */}
-      <div className={styles.notesSection}>
-        <button
-          className={styles.notesToggle}
-          onClick={handleNotesToggle}
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className={`${styles.notesChevron} ${notesExpanded ? styles.expanded : ''}`}
+      {/* Notes Section - only visible when notes exist */}
+      {todo.notes && (
+        <div className={styles.notesSection}>
+          <button
+            className={styles.notesToggle}
+            onClick={handleNotesToggle}
           >
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-          </svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" className={styles.notesIcon}>
-            <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
-          </svg>
-          <span className={styles.notesLabel}>
-            {todo.notes ? 'Notes' : 'Add notes'}
-          </span>
-          {todo.notes && !notesExpanded && (
-            <span className={styles.notesPreviewText}>{todo.notes}</span>
-          )}
-        </button>
-      </div>
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className={`${styles.notesChevron} ${notesExpanded ? styles.expanded : ''}`}
+            >
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" className={styles.notesIcon}>
+              <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
+            </svg>
+            <span className={styles.notesLabel}>Notes</span>
+            {!notesExpanded && (
+              <span className={styles.notesPreviewText}>{todo.notes}</span>
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Dropdown Menu */}
       {showMenu && (
@@ -331,6 +345,15 @@ export default function TodoItem({ todo, isSelected, dragHandleProps }) {
             value={todo.notes}
             onChange={(notes) => updateTodo(todo.id, { notes })}
           />
+          <button
+            className={styles.notesDoneBtn}
+            onClick={(e) => {
+              e.stopPropagation();
+              setNotesExpanded(false);
+            }}
+          >
+            Done
+          </button>
         </div>
       )}
 
