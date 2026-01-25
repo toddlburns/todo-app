@@ -1022,7 +1022,7 @@
       "id": "1e8a7c3f-8bfb-4756-aba7-6a04dabd87ec",
       "title": "talk to phillip about greatest hits classical stuff",
       "notes": "",
-      "priority": 5,
+      "priority": 0,
       "date": "2026-01-24",
       "completed": false,
       "recurrence": null,
@@ -1141,5 +1141,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:10:18.768Z"
+  "exportedAt": "2026-01-25T03:11:48.431Z"
 }
