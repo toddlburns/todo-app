@@ -515,7 +515,14 @@
         ],
         "interval": 1
       },
-      "subItems": [],
+      "subItems": [
+        {
+          "id": "95411416-3275-46cf-baee-5f998283bf24",
+          "title": "Put All New News Items In The CMS",
+          "completed": false,
+          "priority": 0
+        }
+      ],
       "createdAt": "2026-01-24T16:53:25.744Z"
     },
     {
@@ -1136,5 +1143,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:36:26.644Z"
+  "exportedAt": "2026-01-25T03:36:34.137Z"
 }
