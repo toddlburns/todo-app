@@ -289,7 +289,7 @@
       "title": "Check Linktree",
       "notes": "",
       "priority": 5,
-      "date": "2026-01-23",
+      "date": "2026-01-24",
       "completed": false,
       "recurrence": {
         "enabled": true,
@@ -1141,5 +1141,5 @@
     }
   ],
   "completedOccurrences": {},
-  "exportedAt": "2026-01-25T03:29:04.709Z"
+  "exportedAt": "2026-01-25T03:29:08.835Z"
 }
